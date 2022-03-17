@@ -1,0 +1,35 @@
+<div class="container">
+    <br>
+    <h2><strong>Please Login</strong></h2>
+    <small id="smallError" *ngIf="validationError" class="form-text text-danger border border-danger rounded">
+        Please Enter a valid Email & Password
+    </small>
+    <form [class.customForm]="validationError" [formGroup]="loginForm" (ngSubmit)="logIn(loginForm)">
+        <div class="form-group">
+          <label for="Email">Email address</label>
+          <input type="email" class="form-control" [class.is-invalid]="validationError" id="Email" formControlName="_id" placeholder="Enter Email">
+        </div>
+        <div class="form-group">
+          <label for="Password">Password</label>
+          <input type="password" class="form-control" [class.is-invalid]="validationError" id="Password" formControlName="password" placeholder="Enter Password">
+        </div>
+            <button type="submit" class="btn btn-success" [disabled]="loginForm.invalid">Sign In</button>
+        <br>
+        <div id="Register">
+            <span>Not an existing User? </span>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#registerModal">
+                Register
+            </button>
+        </div>
+    </form>
+</div>
+  
+<!-- Modal -->
+<div class="modal fade" id="registerModal" data-backdrop="static" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <i data-dismiss="modal" class="fa fa-times" (click)="this._user.registered=false; this._user.registerError = false;" aria-hidden="true"></i>
+            <app-register-user></app-register-user>
+        </div>
+    </div>
+</div>

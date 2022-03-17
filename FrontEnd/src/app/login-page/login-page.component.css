@@ -1,0 +1,46 @@
+.container{
+    width: 50%;
+}
+.btn-success{
+    width: 6rem;
+}
+.btn-primary{
+    margin-left: 2rem;
+}
+h2{
+    text-align: center;
+}
+#Register{
+    margin-top: 1rem;
+}
+i{
+    margin-top: 1rem;
+    margin-right: 1rem;
+    align-self: flex-end;
+}
+#smallError{
+    padding: 0.1rem;
+    padding-left: 0.2em;
+    /* background: rgba(255, 2, 2, 0.288); */
+}
+form{
+    margin-top: 2.1rem;
+}
+.customForm{
+    margin-top: 0.2rem !important;
+}
+@media screen and (max-width: 860px) {
+    .container{
+        width: 70%;
+    }
+}
+@media screen and (max-width: 575px) {
+    .container{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 325px) {
+    .btn-primary{
+        margin-left: 0;
+    }
+}

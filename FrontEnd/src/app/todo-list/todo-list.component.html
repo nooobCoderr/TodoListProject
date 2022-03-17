@@ -1,0 +1,47 @@
+<div  class="d-flex justify-content-end user-name">
+    <strong class="text-primary">Logged in as:</strong>
+<span class="text-muted">&nbsp;{{this._auth.loggedInUser}}</span>
+</div>
+<div class="d-flex justify-content-end user-name">
+    <button class="btn btn-danger btn-sm" (click)="deleteUser()">Delete User</button>
+</div>
+<div class="container">
+    <form [formGroup]="todoForm" (ngSubmit)="addItem(todoForm)">
+        <div class="row">
+            <input type="text" style="display: none;" formControlName="_id">
+            <input type="text" class="form-control col-sm-8" id="item" formControlName="item" placeholder="Add item to TodoList">
+            <button type="submit" class="btn add-btn btn-success" [disabled]="todoForm.invalid">Add</button>
+        </div>
+    </form>
+    <br>
+    <span class="text-muted heading text-wrap custom-h2"><strong>Your To-Do List</strong></span>
+    <div *ngIf="this._todo.itemsLength == 0">
+        <hr>
+        <h4>All tasks are completed<i class="fa fa-check-square-o" aria-hidden="true"></i></h4>
+    </div>
+    <table class="table table-hover">
+        <tbody>
+            <tr class="row" *ngFor="let data of this._todo.userItemList.item; index as i">
+                <td class="col-sm-8"><strong>{{i+1}}.&nbsp;{{data}}</strong></td>
+                <td class="col-sm-4 d-flex justify-content-around">
+                    <button class="btn btn-outline-primary custom-btn" (click)="this.selected = i"  data-toggle="modal" data-target="#updateModal">Edit</button>
+                    <button class="btn btn-outline-danger custom-btn"  (click)="deleteItem(i)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <i data-dismiss="modal" class="fa fa-times" aria-hidden="true" #closebutton></i>
+            <h3>Update Item</h3>
+            <div class="row" *ngIf="this._todo.userItemList.item">
+                <input type="text" value="{{this._todo.userItemList.item[this.selected]}}" class="form-control col-sm-8" #itemUp>
+                <button type="submit" class="btn add-btn btn-primary" (click)="editItem(itemUp)">Update</button>
+            </div>
+        </div>
+    </div>
+</div>

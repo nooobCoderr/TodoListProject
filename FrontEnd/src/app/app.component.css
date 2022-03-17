@@ -1,0 +1,25 @@
+.myContainer{
+    margin: 1px;
+}
+.navbar{
+    color: rgba(29, 27, 27, 0.685);
+}
+.active{
+    color: rgb(43, 183, 226) !important;
+    font-weight: bold;
+}
+.navbar-brand{
+    font-weight: bold;
+    color: rgba(29, 27, 27, 0.685);
+    font-size: 1.5rem;
+}
+.customLogout{
+    color: rgba(155, 11, 11, 0.637) !important;
+    font-weight: bold;
+}
+a{
+    font-size: 1.3rem;
+}
+.in-out{
+    font-size: 0.9rem;
+}

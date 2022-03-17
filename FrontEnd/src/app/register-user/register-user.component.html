@@ -1,0 +1,26 @@
+<div class="container">
+    <br>
+    <h2><strong>Register User</strong></h2>
+    <div *ngIf="this._user.registered" class="alert alert-success">User has been registered</div>
+    <div *ngIf="this._user.registerError" class="alert alert-warning">User already exists</div>
+    <form  [formGroup]="registerForm" (ngSubmit)="register(registerForm)">
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input type="email" class="form-control" id="email" formControlName="_id" placeholder="Add Email">
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" id="password" formControlName="password" placeholder="Password">
+          <small class="form-text text-muted">
+            Minimum password length allowed is 5
+          </small>
+        </div>
+        <div class="form-group">
+            <label for="ConfirmPassword">Confirm Password</label>
+            <input type="password" class="form-control" id="ConfirmPassword" formControlName="cnfPassword" placeholder="Confirm Password">
+        </div>
+            <button type="submit" class="btn btn-warning" [disabled]="registerForm.invalid">Register</button>
+            <button type="button" data-dismiss="modal" style="display: none;" #closebutton></button>
+      </form>
+      <br>
+</div>

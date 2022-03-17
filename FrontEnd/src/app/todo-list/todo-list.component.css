@@ -1,0 +1,55 @@
+.user-name{
+    margin: 0.5rem;
+}
+.container{
+    padding: 4rem;
+    width: auto;
+}
+.add-btn{
+    margin-left: 2rem;
+    width: 6rem;
+}
+.heading{
+    margin: 1rem;
+}
+h4{
+    margin: 1rem;
+    color: rgba(30, 10, 36, 0.562);
+}
+.btn{
+    margin-left: 1rem;
+}
+i{
+    margin: 1rem;
+    align-self: flex-end;
+}
+.modal-content{
+    padding: 0.1rem;
+}
+.modal-content .row{
+    padding: 1rem;
+    padding-left: 3rem;
+    padding-bottom: 2rem;
+}
+.modal-content h3{
+    align-self: center;
+    font-weight: bold;
+    color: rgba(23, 130, 230, 0.788);
+}
+.custom-btn{
+    height: 2.2rem;
+}
+.custom-h2{
+    font-size: 2rem;
+    font-family: sans-serif, Arial;
+}
+@media screen and (max-width: 575px) {
+    .add-btn{
+        margin-top: 0.5rem;
+        margin-left: 0;
+        width: 6rem;
+    }
+    .custom-h2{
+        font-size: 1.5rem;
+    }
+}
